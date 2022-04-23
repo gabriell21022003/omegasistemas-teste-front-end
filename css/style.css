@@ -1,0 +1,33 @@
+body {
+    margin: auto;
+    width: 100%;
+    background-image: linear-gradient(to right, rgb(55, 135, 209), rgb(31, 31, 231))
+}
+
+#estado {
+    position: relative;
+    margin-left: 2vh;
+    text-align: center;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: x-large;
+}
+
+#title{
+    text-align: center;
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+
+#logo {
+    width: 10vh;
+}
+
+.nav {
+    position: absolute;
+    width: 18vh;
+    align-items: center;
+    margin-left: 45%;
+    margin-top: 10%;
+}
+
