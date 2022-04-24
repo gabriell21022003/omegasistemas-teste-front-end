@@ -12,6 +12,11 @@ fetch ('https://servicodados.ibge.gov.br/api/v1/localidades/estados').then(respo
     })
 })
 
+function mostraDados(){
+    console.log(body)
+}
+
+
 function mostraCidade(){
 
     document.getElementById("cidade").innerHTML='<option id=0>Selecione um Municipio</option>';
