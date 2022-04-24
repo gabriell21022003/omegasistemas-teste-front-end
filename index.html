@@ -18,11 +18,16 @@
         <h1 id="title">Consulta Auxilio Emergencial.</h1><img id="logo" src="img/brazil.svg"> 
 
         <div class="nav">
-            <h1 id="estado">Estado </h1> <select id="select" style="width: 100px;" class="form-select" aria-label=".form-select-sm example">
-                <option id="op1">
-
-                </option>
+            <h1 id="estado">Estado </h1>
+            <select id="select" style="width: 300px;" class="form-select" aria-label=".form-select-sm example" onchange="mostraCidade()">
+                <option id=0>Selecione um Estado</option>
             </select>
+
+            <select id="cidade" style="width: 300px;" class="form-select" aria-label=".form-select-sm example">
+                <option id=0>Selecione um Municipio</option>
+            </select>
+
+          
         </div>
 
     </body>
