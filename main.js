@@ -17,7 +17,9 @@ function mostraDados(){
 }
 
 
-function mostraCidade(){
+
+//funcao para exibir cidade apos selecionar estado
+function showCity(){
 
     document.getElementById("cidade").innerHTML='<option id=0>Selecione um Municipio</option>';
    
