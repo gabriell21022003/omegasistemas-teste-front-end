@@ -1,3 +1,4 @@
+alert('Selecione um estado e clique em consultar para exibir informações')
 //api of brazilian states connection
 fetch ('https://servicodados.ibge.gov.br/api/v1/localidades/estados').then(response1 =>{    
     return response1.json()
@@ -19,7 +20,6 @@ function mostraCasos(){
 
         var chooseState = document.getElementById('select')
         var value = select.options[select.selectedIndex].value
-
         console.log(body3.data)
 
         const estado=body3.data.find(function(e){
@@ -48,7 +48,6 @@ fetch('https://covid19-brazil-api.now.sh/api/status/v1').then(response4 => {
     if(response4.status==404){
         document.getElementById('status').innerHTML="Erro ao conectar"
     }
-   
 })
 .then(body4 => {
     console.log(body4) 
