@@ -71,8 +71,8 @@ body {
 
 #title{
     position: absolute;
-    margin-top: 6%;
-    margin-left: 65vh;
+    margin-top: 1%;
+    margin-left: 69vh;
     text-align: center;
     color: green;
     font-family: 'Lato', sans-serif;
@@ -101,23 +101,116 @@ select:hover {
 
 }
 
-@media (max-width: 320px){
-    #title {
-        position: absolute;
-        margin-top: 20%;
-        margin-left: 1%;
-        text-align: center;
-        color: white;
-        font-family: 'Lato', sans-serif;
+@media (max-width: 400px){
+    #logo {
+        position: relative;
+        margin-left: 78%;
     }
 
-   .nav {
-    position: relative;
-    align-items: center;
-    
-    margin-top: 40%;
-   }
+    #title {
+        position: relative;
+        margin-top: 10%;
+        margin-left: 40%;
+        font-size: 30px;
+        width: 100%;
+    }
+
+    .nav {
+        
+        width: 100vh;
+        position: relative;
+        margin-left: -1%;
+        margin-top: 50%;
+    }
+
+    #select {
+        position: relative;
+        margin-left: 5%;
+        font-size: 30px;
+        width: 600px;
+        height: 80px;
+    }
+
+    #consultar {
+        position: relative;
+        width: 200px;
+        height: 60px;
+        margin-top: 20%;
+        margin-left: 110%;
+        font-size: 25px;
+    }
+
+    #results {
+        position: relative;
+        margin-top: 5%;
+        margin-left: 5%;
+        width: 100vh;
+        font-size: 30px;
+    }
+
+    #statusApi {
+        position: relative;
+        margin-left: 60%;
+        font-size: 40px;;
+    }
+   
 }
+
+@media (max-width: 500px){
+    #logo {
+        position: relative;
+        margin-left: 78%;
+    }
+
+    #title {
+        position: relative;
+        margin-top: 10%;
+        margin-left: 40%;
+        font-size: 40px;
+        width: 100%;
+    }
+
+    .nav {
+        
+        width: 100vh;
+        position: relative;
+        margin-left: -1%;
+        margin-top: 50%;
+    }
+
+    #select {
+        position: relative;
+        margin-left: 0%;
+        font-size: 30px;
+        width: 695px;
+        height: 90px;
+    }
+
+    #consultar {
+        position: relative;
+        width: 330px;
+        height: 80px;
+        margin-top: 25%;
+        margin-left: 60%;
+        font-size: 35px;
+    }
+
+    #results {
+        position: relative;
+        margin-top: 5%;
+        margin-left: 1%;
+        width: 77vh;
+        font-size: 30px;
+    }
+
+    #statusApi {
+        position: relative;
+        margin-left: 60%;
+        font-size: 40px;;
+    }
+   
+}
+
 
 
 
