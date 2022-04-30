@@ -19,13 +19,8 @@
     <body>
 
         <h1 id="title">Consulta Dados Covid 19. </h1><img id="logo" src="img/brazil.svg"> 
-        
-        <div id="statusApi">
-            
-            <label>Status da API: <h2 id="status"></h2></label>
-        </div>
 
-        <div class="nav">
+        <div class="nav" >
             
             <select id="select"  >
                 <option id=0>Selecione um Estado</option>
@@ -33,24 +28,33 @@
 
             <button id="consultar" onclick="mostraCasos()">Consultar</button>
 
-            <div id="results">
+            <div class="card-header"id="results">
                 <div class="margin" id="states">
+                    <h3 style="color: black;">Estado </h3>
                     <h3 id="0" ></h3>
                 </div>
                 
                 <div class="margin" id="cases">
+                    <h3 style="color: black;">Casos Confirmados</h3>
                     <h3 id="0" ></h3>
                 </div>
                 
                 <div class="margin" id="deaths">
+                    <h3 style="color: black;">Mortes</h3>
                     <h3 id="0" ></h3>
                 </div>
 
                 <div class="margin" id="suspects">
+                    <h3 style="color: black;">Suspeitas</h3>
                     <h3 id="0" ></h3>
                 </div>
             </div>
-  
         </div>
+
+        <div class="card" id="statusApi">
+            <label>Status da API: <h2 id="status"></h2></label>
+        </div>
+
+        <small style="position: relative; margin-left: 45%;">Brasil - 2022</small>
     </body>
 </html>

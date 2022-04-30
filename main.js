@@ -43,13 +43,15 @@ fetch('https://covid19-brazil-api.now.sh/api/status/v1').then(response4 => {
 
     //checkibg api status
     if(response4.status==200){
-        document.getElementById('status').innerHTML="Conectado com sucesso"
+        document.getElementById('status').innerHTML="Conectada  "
     } else 
-    document.getElementById('status').innerHTML="Erro ao conectar"
+    if(response4.status==404){
+        document.getElementById('status').innerHTML="Erro ao conectar"
+    }
+   
 })
 .then(body4 => {
     console.log(body4) 
 })
-
 
 
