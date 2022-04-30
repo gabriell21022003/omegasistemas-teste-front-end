@@ -1,53 +1,55 @@
+//api of brazilian states connection
 fetch ('https://servicodados.ibge.gov.br/api/v1/localidades/estados').then(response1 =>{    
-    
-    console.log(response1)
     return response1.json()
-
+    
 }).then(body =>{
-
-    console.log(body)
-
     body.forEach(element => {
-        document.getElementById("select").innerHTML+=`<option id="${element.id}">${element.sigla}</option>`
+        //show states in the html select
+        document.getElementById("select").innerHTML+=`<option id="${element.id}" value="${element.id}">${element.nome}</option>`
     })
 })
 
-function mostraDados(){
-    console.log(body)
+//fucntion to show cases deaths and suspects
+function mostraCasos(){
+    fetch('https://covid19-brazil-api.now.sh/api/report/v1').then(response3 => {
+    
+    return response3.json()
+
+    }).then(body3 => {
+
+        var chooseState = document.getElementById('select')
+        var value = select.options[select.selectedIndex].value
+
+        console.log(body3.data)
+
+        const estado=body3.data.find(function(e){
+            if(e.uid==value){
+                return e
+            }
+        })
+        console.log(estado)
+        if(estado){
+            document.getElementById('states').innerHTML+=`<h3 id="${estado.uid}">${estado.state}</h3>`
+            document.getElementById('cases').innerHTML+=`<h3 id="${estado.uid}">${new Intl.NumberFormat('pt-BR').format(estado.cases)}</h3>`
+            document.getElementById('deaths').innerHTML+=`<h3 id="${estado.uid}">${new Intl.NumberFormat('pt-BR').format(estado.deaths)}</h3>`
+            document.getElementById('suspects').innerHTML+=`<h3 id="${estado.uid}">${new Intl.NumberFormat('pt-BR').format(estado.suspects)}</h3>`
+        }
+    })  
 }
 
+fetch('https://covid19-brazil-api.now.sh/api/status/v1').then(response4 => {
+    response4.json()
+    console.log(response4)
 
-
-//funcao para exibir cidade apos selecionar estado
-function showCity(){
-
-    document.getElementById("cidade").innerHTML='<option id=0>Selecione um Municipio</option>';
-   
-    const select = document.getElementById("select");
-    console.log(select.selectedIndex)
-
-    const item = select.options[select.selectedIndex].text
-
-    console.log(item)
-
-    fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${item}/municipios`).then(response2 => {
-
-    console.log(response2)
-   
-    return response2.json()
-
-}).then(body2 =>{
-    console.log(body2)
-    body2.forEach(element => {
-        document.getElementById("cidade").innerHTML+=`<option id="${element.id}">${element.nome}</option>`
-    })
+    //checkibg api status
+    if(response4.status==200){
+        document.getElementById('status').innerHTML="Conectado com sucesso"
+    } else 
+    document.getElementById('status').innerHTML="Erro ao conectar"
 })
-
-}
-
-
-
-
+.then(body4 => {
+    console.log(body4) 
+})
 
 
 
